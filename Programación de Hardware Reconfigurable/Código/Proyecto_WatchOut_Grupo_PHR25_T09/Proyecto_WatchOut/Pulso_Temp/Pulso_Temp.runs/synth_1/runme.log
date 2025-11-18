@@ -1,0 +1,376 @@
+
+*** Running vivado
+    with args -log TopModule.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopModule.tcl
+
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Jul 14 11:19:14 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source TopModule.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/utils_1/imports/synth_1/TopModule.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/utils_1/imports/synth_1/TopModule.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top TopModule -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12292
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1027.770 ; gain = 468.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TopModule' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:23]
+INFO: [Synth 8-3491] module 'SampleTimer' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/SampleTimer.vhd:20' bound to instance 'timer_inst' of component 'SampleTimer' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'SampleTimer' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/SampleTimer.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'SampleTimer' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/SampleTimer.vhd:28]
+INFO: [Synth 8-3491] module 'MCP300x' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/MCP300x.vhd:60' bound to instance 'adc_inst' of component 'MCP300x' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'MCP300x' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/MCP300x.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'MCP300x' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/MCP300x.vhd:82]
+	Parameter DIVISOR bound to: 200 - type: integer 
+INFO: [Synth 8-3491] module 'ClockDivider' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ClockDivider.vhd:20' bound to instance 'clkdiv_inst' of component 'ClockDivider' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:186]
+INFO: [Synth 8-638] synthesizing module 'ClockDivider' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ClockDivider.vhd:32]
+	Parameter DIVISOR bound to: 200 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ClockDivider' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ClockDivider.vhd:32]
+INFO: [Synth 8-3491] module 'PulseProcessor' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/PulseProcessor.vhd:25' bound to instance 'pulse_inst' of component 'PulseProcessor' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'PulseProcessor' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/PulseProcessor.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'PulseProcessor' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/PulseProcessor.vhd:37]
+INFO: [Synth 8-3491] module 'Display_7Seg_BPM' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:23' bound to instance 'disp_inst' of component 'Display_7Seg_BPM' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:218]
+INFO: [Synth 8-638] synthesizing module 'Display_7Seg_BPM' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:32]
+WARNING: [Synth 8-614] signal 'd_u' is read in the process but is not in the sensitivity list [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:66]
+WARNING: [Synth 8-614] signal 'd_t' is read in the process but is not in the sensitivity list [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:66]
+WARNING: [Synth 8-614] signal 'd_h' is read in the process but is not in the sensitivity list [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:66]
+WARNING: [Synth 8-614] signal 'd_th' is read in the process but is not in the sensitivity list [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'Display_7Seg_BPM' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Display_7Seg_BPM.vhd:32]
+INFO: [Synth 8-3491] module 'divider50MHz' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider50MHz.vhd:19' bound to instance 'U0' of component 'divider50MHz' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:227]
+INFO: [Synth 8-638] synthesizing module 'divider50MHz' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider50MHz.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'divider50MHz' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider50MHz.vhd:24]
+INFO: [Synth 8-3491] module 'DS18B20' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ds18b20.vhd:31' bound to instance 'U1' of component 'DS18B20' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:233]
+INFO: [Synth 8-638] synthesizing module 'DS18B20' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ds18b20.vhd:40]
+INFO: [Synth 8-226] default block is never used [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ds18b20.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'DS18B20' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/ds18b20.vhd:40]
+INFO: [Synth 8-3491] module 'divider1MHz' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider1MHz.vhd:26' bound to instance 'U2' of component 'divider1MHz' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:241]
+INFO: [Synth 8-638] synthesizing module 'divider1MHz' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider1MHz.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'divider1MHz' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/divider1MHz.vhd:32]
+INFO: [Synth 8-3491] module 'CRC' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/CRC.vhd:32' bound to instance 'U3' of component 'CRC' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:247]
+INFO: [Synth 8-638] synthesizing module 'CRC' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/CRC.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'CRC' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/CRC.vhd:41]
+INFO: [Synth 8-3491] module 'Binary_To_BCD_16b' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Binary_To_BCD_16b.vhd:23' bound to instance 'U4' of component 'Binary_To_BCD_16b' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:265]
+INFO: [Synth 8-638] synthesizing module 'Binary_To_BCD_16b' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Binary_To_BCD_16b.vhd:33]
+INFO: [Synth 8-226] default block is never used [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Binary_To_BCD_16b.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'Binary_To_BCD_16b' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/Binary_To_BCD_16b.vhd:33]
+INFO: [Synth 8-3491] module 'X7seg' declared at 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/X7seg.vhd:24' bound to instance 'U5' of component 'X7seg' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:278]
+INFO: [Synth 8-638] synthesizing module 'X7seg' [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/X7seg.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'X7seg' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/X7seg.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'TopModule' (0#1) [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/sources_1/new/TopModule.vhd:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1146.715 ; gain = 587.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1146.715 ; gain = 587.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1146.715 ; gain = 587.578
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1146.715 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/constrs_1/new/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/constrs_1/new/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.srcs/constrs_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/TopModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1234.465 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1234.465 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1234.465 ; gain = 675.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticpg236-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1234.465 ; gain = 675.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1234.465 ; gain = 675.328
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MCP300x'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DS18B20'
+INFO: [Synth 8-802] inferred FSM for state register 'flag_reg' in module 'DS18B20'
+INFO: [Synth 8-802] inferred FSM for state register 'crc_state_reg' in module 'CRC'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                            00001 |                              000
+                      tx |                            00010 |                              001
+                  sample |                            00100 |                              010
+                      rx |                            01000 |                              011
+                  iSTATE |                            10000 |                              100
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MCP300x'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                           000001 |                              000
+                 iSTATE1 |                           000010 |                              001
+                 iSTATE2 |                           000100 |                              010
+                 iSTATE3 |                           001000 |                              011
+                 iSTATE4 |                           010000 |                              100
+                  iSTATE |                           100000 |                              101
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'flag_reg' using encoding 'one-hot' in module 'DS18B20'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              wait_800ms |                        000000001 |                             0000
+                   reset |                        000000010 |                             0001
+                presence |                        000000100 |                             0010
+                    send |                        000001000 |                             0011
+              write_byte |                        000010000 |                             0100
+               write_low |                        000100000 |                             0101
+              write_high |                        001000000 |                             0110
+                get_data |                        010000000 |                             0111
+                read_bit |                        100000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'DS18B20'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                               00
+                crc_calc |                              010 |                               01
+               crc_check |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'crc_state_reg' using encoding 'one-hot' in module 'CRC'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1234.465 ; gain = 675.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 4     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 53    
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               72 Bit    Registers := 2     
+	               16 Bit    Registers := 9     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   4 Input   72 Bit        Muxes := 1     
+	   9 Input   72 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   31 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 5     
+	   2 Input   15 Bit        Muxes := 1     
+	   9 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   6 Input    9 Bit        Muxes := 1     
+	   3 Input    9 Bit        Muxes := 2     
+	   4 Input    9 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 3     
+	   9 Input    7 Bit        Muxes := 1     
+	   3 Input    7 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 51    
+	   4 Input    4 Bit        Muxes := 3     
+	   3 Input    4 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 3     
+	   9 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 15    
+	   5 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 15    
+	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 15    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1330.844 ; gain = 771.707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1339.328 ; gain = 780.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1576.602 ; gain = 1017.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1576.602 ; gain = 1017.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |   267|
+|3     |LUT1   |    49|
+|4     |LUT2   |   431|
+|5     |LUT3   |   433|
+|6     |LUT4   |   175|
+|7     |LUT5   |   255|
+|8     |LUT6   |   476|
+|9     |MUXF7  |     8|
+|10    |MUXF8  |     4|
+|11    |FDCE   |    20|
+|12    |FDRE   |   412|
+|13    |FDSE   |    51|
+|14    |IBUF   |     3|
+|15    |IOBUF  |     1|
+|16    |OBUF   |    29|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:02 . Memory (MB): peak = 1667.332 ; gain = 1020.445
+Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1667.332 ; gain = 1108.195
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1676.484 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 280 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1680.180 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+Synth Design complete | Checksum: 1b94ba0d
+INFO: [Common 17-83] Releasing license: Synthesis
+66 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1680.180 ; gain = 1309.492
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1680.180 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/almud/Downloads/Proyecto_WatchOut_Grupo_PHR25_T09/Proyecto_WatchOut/Pulso_Temp/Pulso_Temp.runs/synth_1/TopModule.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 14 11:20:29 2025...

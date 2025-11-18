@@ -1,0 +1,107 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Jul 14 11:21:37 2025
+| Host         : DESKTOP-VI8FS3U running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
+| Design       : TopModule
+| Device       : xc7a35ti
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    29 |
+|    Minimum number of control sets                        |    29 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    85 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    29 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     2 |
+| >= 16              |    15 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             117 |           45 |
+| No           | No                    | Yes                    |              20 |            5 |
+| No           | Yes                   | No                     |              53 |           14 |
+| Yes          | No                    | No                     |              43 |           19 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             250 |           82 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------+-------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |             Enable Signal            |        Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+--------------------------------------+-------------------------------+------------------+----------------+--------------+
+|  U0/clk_50MHz  |                                      |                               |                1 |              1 |         1.00 |
+|  CLK1MHZ_BUFG  | U1/WRITE_BYTE_CNT                    |                               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | adc_inst/cnt                         | rst_IBUF                      |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | adc_inst/FSM_onehot_state[4]_i_1_n_0 | rst_IBUF                      |                3 |              5 |         1.67 |
+|  CLK1MHZ_BUFG  | U1/flag                              |                               |                2 |              6 |         3.00 |
+|  U0/clk_50MHz  |                                      | U2/count[6]_i_1_n_0           |                2 |              7 |         3.50 |
+|  CLK1MHZ_BUFG  | U1/GET_DATA_CNT                      |                               |                3 |              7 |         2.33 |
+|  CLK1MHZ_BUFG  | U1/bit_cnt                           |                               |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG |                                      | clkdiv_inst/count[7]_i_1_n_0  |                2 |              8 |         4.00 |
+|  CLK1MHZ_BUFG  | U1/FSM_onehot_state[8]_i_1_n_0       |                               |                6 |              9 |         1.50 |
+|  clk_IBUF_BUFG | adc_inst/data_r                      | rst_IBUF                      |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG | timer_inst/sample_tick_reg_0[0]      |                               |                4 |             10 |         2.50 |
+|  CLK1MHZ_BUFG  | U3/FSM_onehot_crc_state_reg_n_0_[2]  | U3/dataOut[13]_i_1__0_n_0     |                4 |             14 |         3.50 |
+|  CLK1MHZ_BUFG  | U3/i[6]_i_2_n_0                      | U3/i[6]_i_1_n_0               |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | pulse_inst/bpm_reg                   | rst_IBUF                      |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | pulse_inst/ibi_buffer[3]_2           | rst_IBUF                      |               10 |             16 |         1.60 |
+|  clk_IBUF_BUFG | pulse_inst/ibi_buffer[2]_1           | rst_IBUF                      |                8 |             16 |         2.00 |
+|  clk_IBUF_BUFG | pulse_inst/ibi_buffer[0]_3           | rst_IBUF                      |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | pulse_inst/ibi_buffer[1]_0           | rst_IBUF                      |                9 |             16 |         1.78 |
+|  clk_IBUF_BUFG | pulse_inst/E[0]                      | rst_IBUF                      |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG | timer_inst/sample_tick               | rst_IBUF                      |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG |                                      | timer_inst/counter[0]_i_1_n_0 |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | pulse_inst/last_beat_time            | rst_IBUF                      |                4 |             18 |         4.50 |
+|  U0/clk_50MHz  |                                      | rst_IBUF                      |                5 |             20 |         4.00 |
+|  CLK1MHZ_BUFG  |                                      | U1/S_reset_reg_n_0            |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG |                                      |                               |               10 |             26 |         2.60 |
+|  CLK1MHZ_BUFG  | U1/dataOut[70]_i_2_n_0               | U1/dataOut[70]_i_1_n_0        |               14 |             36 |         2.57 |
+|  CLK1MHZ_BUFG  | U1/dataOut[70]_i_2_n_0               | U1/dataOut[71]_i_1_n_0        |                5 |             36 |         7.20 |
+|  CLK1MHZ_BUFG  |                                      |                               |               34 |             90 |         2.65 |
++----------------+--------------------------------------+-------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Jul  6 16:51:19 2025
+# Process ID         : 2848
+# Current directory  : C:/Users/almud/Downloads/Proyecto_WatchOut_V2/Pulso_Temp
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent12772 C:\Users\almud\Downloads\Proyecto_WatchOut_V2\Pulso_Temp\Pulso_Temp.xpr
+# Log file           : C:/Users/almud/Downloads/Proyecto_WatchOut_V2/Pulso_Temp/vivado.log
+# Journal file       : C:/Users/almud/Downloads/Proyecto_WatchOut_V2/Pulso_Temp\vivado.jou
+# Running On         : DESKTOP-VI8FS3U
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17041 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 18114 MB
+# Available Virtual  : 11368 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/almud/Downloads/Proyecto_WatchOut_V2/Pulso_Temp/Pulso_Temp.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/almud/Downloads/Proyecto_WatchOut_V2/Pulso_Temp/Pulso_Temp.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 1249.695 ; gain = 156.613
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\almud\Downloads\Proyecto_WatchOut_V2\Pulso_Temp\Pulso_Temp.srcs\sources_1\new\PulseProcessor.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\almud\Downloads\Proyecto_WatchOut_V2\Pulso_Temp\Pulso_Temp.srcs\sources_1\new\TopModule.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\almud\Downloads\Proyecto_WatchOut_V2\Pulso_Temp\Pulso_Temp.srcs\sources_1\new\TopModule.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\almud\Downloads\Proyecto_WatchOut_V2\Pulso_Temp\Pulso_Temp.srcs\sources_1\new\TopModule.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  6 20:02:50 2025...
