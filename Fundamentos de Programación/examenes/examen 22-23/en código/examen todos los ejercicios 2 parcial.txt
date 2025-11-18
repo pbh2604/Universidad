@@ -1,0 +1,270 @@
+ejercicio 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    unsigned n, masc = 0;
+    int i;
+    FILE *fichero;
+    if(!(fichero = fopen("numeros.dat","rb"))){
+        printf("Error en la apertura del fihero");
+        return 1;
+    }
+
+    for(i = 0; i<4;i++,masc <<=8)//esto se coloca así porque se actualizaría
+        masc |= 3; //3 veces ya que el aumento de i pasa al final de la primera ejecución
+        // ojo hay que entender que estos desplazamientos se hace con 32 bits(4 bytes) debido a que es un entero.
+    while(fread(&n,sizeof(unsigned),1,fichero)!= 0){// es como un fgets en fichero de texto
+        printf("%u\n",n);
+        n |= masc;
+        printf("%u\n",n);
+    }
+    fclose(fichero);
+    return 0;
+}
+
+ejercicio 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc,char *argv[]){
+    FILE *fichero,*fichero1;
+    char linea[256];
+    int pos= 1;
+    if(argc < 3 ){
+        printf("Faltan parámetros\n");
+        return 2;
+    }
+
+    if(!(fichero = fopen("argv[1]","r"))){
+        printf("Error en la apertura del fichero1\n");
+        return 1;
+    }
+    if(!(fichero1 = fopen("salida.txt","w"))){
+        printf("Error en la apertura del fichero\n");
+        return 3;
+    }
+
+    while(fgets(linea,256,fichero))
+    if(! strstr(linea,argv[2]))
+        fprintf(fichero1,"%d %s",pos++,linea);
+    fclose(fichero);
+    fclose(fichero1);
+    return 0;
+}
+
+ejercicio 3
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define N 3
+#define L 3
+#define M 3
+
+void rellenar(int [N][N]);
+void mostrar_mat(int [N][N]);
+void mul_mat(int [N][N],int [N][N]);
+
+int main(){
+    int matriz[N][N],matriz1[N][N];
+    rellenar(matriz);
+    printf("\n");
+    mostrar_mat(matriz);
+    printf("\n");
+    rellenar(matriz1);
+    printf("\n");
+    mostrar_mat(matriz1);
+    printf("\n");
+    mul_mat(matriz,matriz1);
+    return 0;
+}
+
+void rellenar(int matriz[N][N]) {
+    srand(time(NULL));
+    int i, j;
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++)
+            matriz[i][j] = rand() % 10;
+    }
+}
+
+void mostrar_mat(int matriz[N][N]) {
+    int i, j;
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++)
+            printf("%i ", matriz[i][j]);
+        printf("\n");
+    }
+}
+
+void mul_mat(int matriz[L][M],int matriz1[M][N]){
+    int i,j,k,suma;
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < N; j++){
+            for (k = 0,suma=0; k < M; k++)
+                suma += matriz[i][k]*matriz1[k][j];
+            printf("%i ",suma);
+        }
+        printf("\n");
+    }
+}
+
+ejercicio 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct nodo{
+    int suma,valor;
+    int n;
+    float media;
+    struct nodo *sig;
+}NODO;
+
+typedef NODO *LISTA;
+
+LISTA inicializar (LISTA *);
+LISTA insertar (LISTA *, int);
+LISTA borrar (LISTA *, int);
+unsigned num_elem (LISTA);
+int vacia (LISTA);
+LISTA buscar (LISTA, int);
+void printar(LISTA);
+void borrar_lista(LISTA *);
+void borrar_primerelemento(LISTA *);
+void eliminar_intervalo(LISTA *,int , int );
+
+int main() {
+    LISTA *lista;
+    FILE *fich_1;
+
+    inicializar(&lista);
+    insertar(&lista,5);
+    insertar(&lista,7);
+    insertar(&lista,4);
+    //borrar(&lista,4);
+    printar(lista);
+    printf("%i",vacia(lista));
+    //printf("%u\n", num_elem(lista));
+    //borrar_lista(&lista);
+    //printar(lista);
+    //borrar_primerelemento(&lista);
+    //printar(lista);
+    eliminar_intervalo(&lista,2, 10);
+    printar(lista);
+    return 0;
+}
+
+LISTA inicializar (LISTA *lista){
+    /*Apunta a la primera dir de la la lista y le da un de NULL*/
+    return *lista = NULL;
+}
+
+unsigned num_elem (LISTA lista){// LISTA lista funciona como un nodo.
+    //entonces lo que se hace aquí es que si el nodo no es vacio, aumenta el contador
+    unsigned n = 0;
+    while (lista){
+        n++;
+        lista = lista->sig;
+    }
+    return n;
+}
+
+int vacia (LISTA lista){
+    /* si se cumple la condición devuelve 1(vacia)
+     * si no se cumple devuelve 0(no está vacía)*/
+    return lista == NULL ;
+}
+
+LISTA borrar (LISTA *lista, int dato){
+    LISTA aux, act = *lista;
+    /* lo que hace es que la primera dirección de la lista
+     * apunte a un nodo para que pueda utilizar los valores
+     * contenidos en la estructura*/
+    while (act && act->valor != dato){
+        /* básicamente lo que hace es recorrer la lista hasta que
+         * encuentre el valor que es igual al introducido o que no
+         * se haya encontrado el dato y se haya terminado la lista*/
+        aux = act;//anterior(osea al principio 1 pos)
+        act = act->sig;//(act)(osea al principio 2 pos)
+    }
+    if (act){
+        if (act == *lista)//si es la primera pos
+            *lista = act->sig;
+            /*básicamente que le diga al siguiente pos de la lista que se vuelva la
+             * primera pos de la lista*/
+        else
+            aux->sig = act->sig;
+        /*lo que hace es que el nodo anterior al actual(aux)
+         * apunte al siguiente nodo del actual */
+        free (act);//libera el espacio almacenado
+    }
+    return *lista;
+}
+
+void printar(LISTA lista){
+    LISTA aux = lista;//nodo auxiliar para recorrer la lista
+    printf("Contenido de la lista: ");
+    while(aux!=NULL){
+        printf("%d->",aux->valor);
+        aux = aux->sig;
+    }
+    printf("NULL\n");
+}
+
+LISTA insertar (LISTA *lista, int dato){
+    LISTA aux = (LISTA) malloc (sizeof (NODO));//funciona como un nodo que sea ampliable
+    aux->valor = dato;//guarda el dato
+    aux->sig = *lista;//hace que el nuevo nodo apunte a la primera pos de la lista(básicamente para conectarlo con la lista)
+    return *lista = aux;// aquí hace el nuevo nodo sea la nueva primera pos
+}
+
+void borrar_primerelemento(LISTA *lista){
+    LISTA aux;// nodo aux
+    if(*lista != NULL) {
+        aux = *lista;// copia la primera pos
+        *lista = aux->sig;
+        /*lo que hace aquí es que el siguiente nodo lo transforma en la primera pos de la liosta */
+        free(aux);//libera espacio osea borra el nodo que tiene el mismo valor que aux
+    }
+}
+
+void borrar_lista(LISTA *lista){
+    LISTA act = *lista;// nodo auxiliar donde se copia el primera dirección de la lista
+    while(act != NULL){
+        *lista = act->sig;//conecta act con la lista
+        free(act);//libera memoria
+        act = *lista;// rellena memoria con el nuevo valor de la primera dir de la lista
+    }
+}
+
+void eliminar_intervalo(LISTA *lista,int inf, int sup){
+    int aux1;
+    LISTA act = *lista,ant = act,aux;
+    if(inf > sup) {
+        aux1 = inf;
+        inf = sup;
+        sup = aux1;
+    }
+
+    while(act) {
+        if (((act->n) >= inf) && ((act->n <= sup))) {
+            aux = act;
+            if (aux = *lista) {
+                *lista = act->sig;
+                act = ant = *lista;
+            } else {
+                ant->sig = act->sig;
+                act = act->sig;
+            }
+            free(aux);
+        } else {
+            ant = act;
+            act = act->sig;
+        }
+    }
+}

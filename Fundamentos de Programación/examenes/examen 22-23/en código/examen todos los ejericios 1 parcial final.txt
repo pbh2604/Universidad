@@ -1,0 +1,126 @@
+ejercicio 1
+#include <stdio.h>
+
+int main(){
+    int cont=0;
+    char c,c1;
+    do{
+        scanf("%c",&c);
+    }while(c!='a'&&c!='e'&&c!='i'&&c!='o'&& c!='u');
+    fflush(stdin);
+    printf("\n");
+    c  = c-'a'+'A';
+    scanf("%c",&c1);
+    fflush(stdin);
+    while(c != c1){
+        cont++;
+        scanf("%c", &c1);
+        fflush(stdin);
+    }
+    printf("%i",cont);
+    return 0;
+}
+
+ejercicio 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define N 6
+#define M 4
+
+void rellenar(char [N][N]);
+void mostrar_mat(char [N][N]);
+void copiar_submatriz(char [N][N],char [M][M],char ,char);
+void mostrar_mat1(char [M][M]);
+
+int main(){
+    char matriz[N][N],matriz1[M][M];
+    rellenar(matriz);
+    mostrar_mat(matriz);
+    printf("\n");
+    copiar_submatriz(matriz,matriz1,'a','c');
+    mostrar_mat1(matriz1);
+    return 0;
+}
+
+void rellenar(char matriz[N][N]) {
+    srand(time(NULL));
+    int i, j;
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N; j++)
+            matriz[i][j] = rand() % ('z'-'a'+1)+'a';
+}
+
+void mostrar_mat(char matriz[N][N]){
+    int i,j;
+    for(i=0; i<N; i++) {
+        for (j = 0; j < N; j++)
+            printf("%c ", matriz[i][j]);
+        printf("\n");
+    }
+}
+
+void mostrar_mat1(char matriz1[M][M]){
+    int i,j;
+    for(i=0; i<M; i++) {
+        for (j = 0; j < M; j++)
+            printf("%c ", matriz1[i][j]);
+        printf("\n");
+    }
+}
+
+void copiar_submatriz(char matriz[N][N],char matriz1[M][M],char a,char b){
+    int i, j,k=0,l=0;
+    char aux;
+    if (a > b) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    for (i = 0; i < N && k <M; i++)
+        for (j = 0; j < N && k <M; j++)
+            if (matriz[i][j] >= a && matriz[i][j] <= b) {
+                matriz1[k][l] = matriz[i][j];
+                l++;
+                if(l == M){
+                    l = 0;
+                    k++;
+                }
+            }
+    for (i = 0; i < M; i++)
+        for (j = 0; j < M; j++)
+            if(matriz1[i][j] < 'a' || matriz[i][j] > 'z')
+                matriz1[i][j] = '@';
+}
+
+ejercicio 3
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#define N 5
+
+int main(){
+    srand(time(NULL));
+    unsigned array[N],i;//j;
+    for(i=0;i<N;i++) {
+        array[i] = rand();
+        printf("%u ",array[i]);
+    }
+   // for(i = 0;i<N;i++)
+    //    printf("%u ",array[i]);
+
+    printf("\n");
+
+    for(i=0; i<N;i++){
+        array[i] /= 3600;
+        if(array[i] > 23)
+            array[i] = 0;
+        printf("%u ",array[i]);
+        }
+   // for(j = 0;j<N;j++)
+    //    printf("%u ",array[j]);
+
+    return 0;
+}

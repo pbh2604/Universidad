@@ -1,0 +1,3 @@
+C:/Users/ceram/Desktop/ejercicio38/cmake-build-debug/CMakeFiles/ejercicio38.dir
+C:/Users/ceram/Desktop/ejercicio38/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ceram/Desktop/ejercicio38/cmake-build-debug/CMakeFiles/rebuild_cache.dir

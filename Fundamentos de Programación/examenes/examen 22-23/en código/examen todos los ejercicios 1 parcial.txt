@@ -1,0 +1,124 @@
+ejercicio 1
+
+#include <stdio.h>
+int main() {
+    int cont = 0;
+    char c;
+    do{
+        scanf("%c",&c);
+    }while(c < 'A' || c > 'Z');
+    scanf("%c",&c);
+    //fflush(stdin);
+    while(c < 'A' ||  c > 'Z'){
+        cont++;
+        scanf("c",&c);
+    }
+    printf("%i",cont);
+    //fflush(stdin);
+    return 0;
+}
+
+ejercicio 2
+void quitar_cad(char cadena[N],char cadena1[N]){
+    int i,j;
+    for(i=0; i<N; i++)
+        for(j=0;j<N && cadena[i] != ' ';j++)
+            if(cadena[i] == cadena1[j])
+                cadena[i] = ' ';
+}
+
+ejercicio 3 
+
+void matriz1(int matriz[N][N],int f,int c){
+    int i,j;
+    matriz[f][c] = 0;
+    for(i = f+1,j=c+1;i<N && j<N;i++,j++)//diagonal inferior der
+        matriz[i][j] = 0;
+    for(i = f-1,j=c+1;i >= 0 && j<N;i--,j++)// diagonal superior der
+        matriz[i][j] = 0;
+    for(i = f-1,j=c-1;i >= 0 && j >= 0;i--,j--)// diagonal superior izq
+        matriz[i][j] = 0;
+    for(i = f+1,j=c-1;i<N && j>=0;i++,j--)// diagonal inferior izq
+        matriz[i][j] = 0;
+
+}
+
+ejercicio 4
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define N 5
+
+void diagonales(int [N][N],int ,int );
+void quitar_cad(char [N],char [N]);
+void mostrar_cad(char [N]);
+void mostrar_mat(int [N][N]);
+
+int main(){
+    srand(time(NULL));
+    char cadena[N],cadena1[N];
+    int matriz[N][N],i,j;
+    for(i=0; i<N; i++) {
+        for (j = 0; j < N; j++)
+            matriz[i][j] = rand() % 10;
+        cadena[i] = rand()%('Z'-'A'+1)+'A';
+        cadena1[i] = rand()%('Z'-'A'+1)+'A';
+    }
+
+    mostrar_cad(cadena);
+    printf("\n");
+    mostrar_cad(cadena1);
+    printf("\n");
+    mostrar_mat(matriz);
+    printf("\n");
+    //funciones
+    diagonales(matriz,2,2);
+    quitar_cad(cadena,cadena1);
+
+    mostrar_cad(cadena);
+    printf("\n");
+    mostrar_cad(cadena1);
+    printf("\n");
+    mostrar_mat(matriz);
+    printf("\n");
+    return 0;
+}
+
+void diagonales(int matriz[N][N],int f,int c){
+    int i,j;
+    matriz[f][c] = 0;
+    for(i = f+1,j=c+1;i<N && j<N;i++,j++)//diagonal inferior derecha
+        matriz[i][j] = 0;
+    for(i = f-1,j=c+1;i >= 0 && j<N;i--,j++)// diagonal derecha superior
+        matriz[i][j] = 0;
+    for(i = f-1,j=c-1;i >= 0 && j >= 0;i--,j--)// diagonal superior derecha
+        matriz[i][j] = 0;
+    for(i = f+1,j=c-1;i<N && j>=0;i++,j--)// diagonal inferior izquierda
+        matriz[i][j] = 0;
+
+}
+
+void quitar_cad(char cadena[N],char cadena1[N]){
+    int i,j;
+    for(i=0; i<N; i++)
+        for(j=0;j<N && cadena[i] != ' ';j++)
+            if(cadena[i] == cadena1[j])
+                cadena[i] = ' ';
+}
+
+void mostrar_cad(char cadena[N]){
+    int i;
+    for(i=0;i<N;i++)
+        printf ("%c",cadena[i]);
+}
+
+void mostrar_mat(int matriz[N][N]){
+    int i,j;
+    for(i=0; i<N; i++) {
+        for (j = 0; j < N; j++)
+            printf("%i ", matriz[i][j]);
+        printf("\n");
+    }
+
+}
