@@ -1,0 +1,17 @@
+Maestro ejecutándose en 4401-12
+Del proceso 1: Hola, desde 4401-12
+Del proceso 2: Hola, desde 4401-12
+Del proceso 4: Hola, desde 4401-12
+Del proceso 5: Hola, desde 4401-12
+Del proceso 6: Hola, desde 4401-12
+Del proceso 7: Hola, desde 4401-12
+Del proceso 8: Hola, desde 4401-12
+Del proceso 3: Hola, desde 4401-12
+Tiempo del Proceso[1] = 6.000097 s
+Tiempo del Proceso[2] = 7.000094 s
+Tiempo del Proceso[3] = 8.000089 s
+Tiempo del Proceso[4] = 9.000103 s
+Tiempo del Proceso[5] = 10.000094 s
+Tiempo del Proceso[6] = 11.000091 s
+Tiempo del Proceso[7] = 12.000101 s
+Tiempo del Proceso[8] = 13.000090 s

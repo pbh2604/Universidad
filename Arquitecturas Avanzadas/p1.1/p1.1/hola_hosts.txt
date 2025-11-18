@@ -1,0 +1,5 @@
+4401-1:4   # Primeros   4 procesos en el pc1
+4401-2:4   # Siguientes 4 procesos en el pc2
+
+#4401-1     #Todos los procesos en el pc1
+#4001-2     #Todos los procesos en el pc2
