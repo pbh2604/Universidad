@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1639781911 source:c:\users\lucasvum\documents\programingfolder\codeblocks\c\criptex\cipher.c
+	<stdio.h>
+	"cipher.h"
+
+1639782364 c:\users\lucasvum\documents\programingfolder\codeblocks\c\criptex\cipher.h
+
+1639782594 source:c:\users\lucasvum\documents\programingfolder\codeblocks\c\criptex\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cipher.h"
+
+1655654394 source:c:\users\prestamo\downloads\prácticas\practica14\practica14\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"encriptar.h"
+
+1655728155 c:\users\prestamo\downloads\prácticas\practica14\practica14\encriptar.h
+
+1655728214 source:c:\users\prestamo\downloads\prácticas\practica14\practica14\encriptar.c
+	<stdio.h>
+	"encriptar.h"
+
+1655729963 source:c:\users\prestamo\downloads\prácticas\practica14\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"encriptar.h"
+
+1655729071 c:\users\prestamo\downloads\prácticas\practica14\encriptar.h
+
+1655729079 source:c:\users\prestamo\downloads\prácticas\practica14\encriptar.c
+	<stdio.h>
+	"encriptar.h"
+

@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1639766454 source:c:\users\lucasvum\documents\programingfolder\codeblocks\c\practica13\main.c
+	<stdio.h>
+	<stdlib.h>
+	"rotar.h"
+
+1639765297 c:\users\lucasvum\documents\programingfolder\codeblocks\c\practica13\rotar.h
+
+1639765245 source:c:\users\lucasvum\documents\programingfolder\codeblocks\c\practica13\rotar.c
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"rotar.h"
+
+1642687545 source:c:\users\ceram\desktop\prácticas\practica13\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1642687545 c:\users\ceram\desktop\prácticas\practica13\rotar.h
+
+1642687545 source:c:\users\ceram\desktop\prácticas\practica13\rotar.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655576172 source:c:\users\prestamo\downloads\prácticas\practica13\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655575655 c:\users\prestamo\downloads\prácticas\practica13\rotar.h
+
+1654793759 source:c:\users\prestamo\downloads\prácticas\practica13\rotar.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655575152 source:c:\users\prestamo\downloads\prácticas\practica13bb\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655575655 c:\users\prestamo\downloads\prácticas\practica13bb\rotar.h
+
+1655569126 source:c:\users\prestamo\downloads\prácticas\practica13bb\rotar.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655575955 source:c:\users\prestamo\downloads\prácticas\practica13bb\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+
+1655576312 source:c:\users\prestamo\downloads\prácticas\practica13\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"rotar.h"
+

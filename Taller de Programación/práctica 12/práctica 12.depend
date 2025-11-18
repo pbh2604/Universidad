@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1655564113 source:c:\users\prestamo\downloads\prácticas\práctica 12\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"tipos.h"
+
+1655571384 c:\users\prestamo\downloads\prácticas\práctica 12\tipos.h
+	<stdio.h>
+
+1655564047 source:c:\users\prestamo\downloads\prácticas\práctica 12\funciones.c
+	"tipos.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1655560853 c:\users\prestamo\downloads\prácticas\práctica 12\funciones.c
+	"tipos.h"
+	<stdio.h>
+	<stdlib.h>
+
