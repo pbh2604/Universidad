@@ -1,0 +1,193 @@
+package option1;
+import java.io.*;
+import java.util.*;
+
+public class TravelingSalesman {
+    static private Random r = new Random();
+    private int numCities = 0;
+    private ArrayList<String> cities = null;
+    private int[][] distances = null;
+    private int numVisits = 0;
+    private ArrayList<String> visits = null;
+
+    private int populationSize = 0;
+    private int numGenerations = 0;
+    private float crossoverProb = 0.8F;
+    private float mutationProb = 0.0F;
+    private float inversionProb = 0.0F;
+
+    private ArrayList<Individual> population = null;
+
+    public TravelingSalesman(String filename) {
+        readData(filename);
+        population = new ArrayList<>(populationSize);
+        for (int i = 0; i < populationSize; i++)
+            population.add(new Individual(visits));
+    }
+
+    private int calculateDistance(Individual individual) {
+        int totalDistance = 0;
+        
+        totalDistance += distances[cities.indexOf("Madrid")]
+                                  [cities.indexOf(individual.getCity(0))];
+
+        for (int i = 1; i < individual.getLength(); i++)
+            totalDistance += distances[cities.indexOf(individual.getCity(i - 1))]
+                                      [cities.indexOf(individual.getCity(i))];
+
+        totalDistance += distances[cities.indexOf(individual.getCity(individual.getLength() - 1))]
+                                  [cities.indexOf("Madrid")];
+        return totalDistance;
+    }
+
+    private Individual tournament() {
+        Individual best = null;
+        int minD = Integer.MAX_VALUE;
+        for (int i = 0; i < 3; i++) {
+            Individual candidate = population.get(r.nextInt(population.size()));
+            int d = calculateDistance(candidate);
+            if (d < minD) {
+                minD = d;
+                best = candidate;
+            }
+        }
+        return best;
+    }
+
+    public void evolve() {
+        int generation = 1;
+
+        while (generation <= this.numGenerations) {
+            ArrayList<Individual> newPopulation = new ArrayList<>();
+
+            Individual bestIndividual = population.get(0);
+            int bestDist = calculateDistance(bestIndividual);
+            for (Individual ind : population) {
+                int d = calculateDistance(ind);
+                if (d < bestDist) {
+                    bestDist = d;
+                    bestIndividual = ind;
+                }
+            }
+            newPopulation.add(new Individual(bestIndividual));
+
+            while (newPopulation.size() < populationSize) {
+                Individual parent1 = tournament();
+                Individual parent2 = tournament();
+                Individual offspring;
+
+                if (r.nextFloat() <= crossoverProb) {
+                    offspring = parent1.crossoverPMX(parent2);
+                } else {
+                    offspring = new Individual(parent1);
+                }
+
+                if (r.nextFloat() <= mutationProb) {
+                    offspring.swap();
+                }
+
+                if (r.nextFloat() <= inversionProb) {
+                    String c1 = offspring.getRandomCity();
+                    String c2 = offspring.getDifferentCity(c1);
+                    offspring.invert(c1, c2);
+                }
+
+                newPopulation.add(offspring);
+            }
+
+            population = newPopulation;
+            System.out.println("Generation " + generation + " - Best distance: " + bestDist);
+            generation++;
+        }
+        showResult();
+    }
+
+    private void showResult() {
+        Individual best = null;
+        int min = Integer.MAX_VALUE;
+        for (Individual i : population) {
+            int d = calculateDistance(i);
+            if (d < min) {
+                min = d;
+                best = i;
+            }
+        }
+        System.out.println("\nFINISHED. Best solution found: " + min + " Km");
+        System.out.println("Route: " + best.toString());
+    }
+
+    private void readData(String filename) {
+        Scanner sc = null;
+        try {
+            sc = new Scanner(new File(filename));
+            sc.useLocale(Locale.US);
+
+            while (!sc.next().contains("="));
+            this.numCities = sc.nextInt();
+            sc.nextLine();
+
+            cities = new ArrayList<>(this.numCities);
+            for (int i = 0; i < this.numCities; i++) {
+                String line = sc.nextLine().trim();
+                if (line.isEmpty()) {
+                    i--;
+                    continue;
+                }
+                cities.add(line);
+            }
+
+            distances = new int[this.numCities][this.numCities];
+            for (int i = 0; i < this.numCities; i++) {
+                for (int j = 0; j < this.numCities; j++) {
+                    if (sc.hasNextInt()) {
+                        distances[i][j] = sc.nextInt();
+                    }
+                }
+            }
+
+            while (!sc.next().contains("="));
+            this.numVisits = sc.nextInt();
+            sc.nextLine();
+
+            visits = new ArrayList<>(this.numVisits);
+            for (int i = 0; i < this.numVisits; i++) {
+                String line = sc.nextLine().trim();
+                if (line.isEmpty()) {
+                    i--;
+                    continue;
+                }
+                visits.add(line);
+            }
+
+            while (!sc.next().contains("="));
+            this.populationSize = sc.nextInt();
+
+            while (!sc.next().contains("="));
+            this.numGenerations = sc.nextInt();
+
+            while (!sc.next().contains("="));
+            String floatStr = sc.next().replace(",", ".");
+            this.inversionProb = Float.parseFloat(floatStr);
+
+            while (!sc.next().contains("="));
+            floatStr = sc.next().replace(",", ".");
+            this.mutationProb = Float.parseFloat(floatStr);
+
+        } catch (Exception e) {
+            System.out.println("Error reading file: " + e.toString());
+            e.printStackTrace();
+            System.exit(0);
+        } finally {
+            if (sc != null) sc.close();
+        }
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java TravelingSalesman <filename>");
+            System.exit(0);
+        }
+        TravelingSalesman solver = new TravelingSalesman(args[0]);
+        solver.evolve();
+    }
+}
