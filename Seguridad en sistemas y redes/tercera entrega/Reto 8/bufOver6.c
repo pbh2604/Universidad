@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char* gets(char *);
+
+void win() {
+    printf("you win!\n");
+    exit(0);
+}
+
+int main() {
+        int cookie;
+        char buf[80];
+        
+        printf("buf: %08x cookie: %08x\n", &buf, &cookie);
+        gets(buf);
+
+        if (cookie == 0x41424344)
+                printf("you lose!\n");
+}
